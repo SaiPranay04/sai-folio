@@ -3,9 +3,9 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import certNPTEL from '@/assets/cert-nptel.jpg';
-import certAWS from '@/assets/cert-aws.jpg';
-import certIEEE from '@/assets/cert-ieee.jpg';
-import certSIH from '@/assets/cert-sih.jpg';
+import certIBMGenAI from '@/assets/GEN AI IBM Langchain_page-0001.jpg';
+import certNGAndrew from '@/assets/NG Andrew_page-0001.jpg';
+import certAmazonML from '@/assets/image.png';
 
 const certifications = [
   {
@@ -14,19 +14,19 @@ const certifications = [
     image: certNPTEL,
   },
   {
-    title: 'AWS ML Scholar 2025',
-    description: 'AWS Machine Learning Scholarship Program',
-    image: certAWS,
+    title: 'IBM GenAI - LangChain',
+    description: 'Fundamentals of AI Agents Using RAG and LangChain',
+    image: certIBMGenAI,
   },
   {
-    title: 'IEEE Paper Presentation',
-    description: 'Quantum Security Model research paper',
-    image: certIEEE,
+    title: 'Andrew Ng Machine Learning',
+    description: 'Supervised Machine Learning: Regression and Classification from Stanford',
+    image: certNGAndrew,
   },
   {
-    title: 'Smart India Hackathon',
-    description: 'Finalist in Smart India Hackathon 2024',
-    image: certSIH,
+    title: 'Amazon ML Challenge',
+    description: 'Top 2000 in Amazon ML Challenge',
+    image: certAmazonML,
   },
 ];
 

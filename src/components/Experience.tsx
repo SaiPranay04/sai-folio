@@ -5,22 +5,22 @@ import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Lead Web Developer',
-    company: 'NIT Patna',
-    period: 'Aug 2023 – Present',
-    description: 'Developed admin portals and improved performance by 70%.',
+    title: 'Software Dev Intern',
+    company: 'PY Headhunters',
+    period: 'May 2024 – August 2024',
+    description: 'Developed Sustainable footprint manager site',
   },
   {
-    title: 'Freelance Web Engineer',
+    title: 'AI Intern',
+    company: 'NetoAI',
+    period: 'May 2025 – July 2025',
+    description: 'Built Multi AI agent pipeline for HRMS',
+  },
+  {
+    title: 'Freelance Web Developer',
     company: 'RT Marine',
-    period: 'Jun 2024 – Present',
-    description: 'Built enterprise dashboard & AI integration system.',
-  },
-  {
-    title: 'Android Developer Intern',
-    company: 'MeetMux',
-    period: 'Jan 2025 – Apr 2025',
-    description: 'Fixed major app UI bugs and optimized network requests.',
+    period: 'Sept 2025 – Oct 2025',
+    description: 'Developed and deployed a modern corporate website with functional admin panel',
   },
 ];
 
