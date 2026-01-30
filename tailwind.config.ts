@@ -93,6 +93,10 @@ export default {
           "100%": { opacity: "1", transform: "translateX(0)" }
         },
         "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 4px 20px hsl(217 91% 60% / 0.3)" },
+          "50%": { boxShadow: "0 4px 30px hsl(217 91% 60% / 0.5), 0 8px 60px hsl(217 91% 60% / 0.2)" }
+        },
+        "glow-pulse-dark": {
           "0%, 100%": { boxShadow: "0 0 20px hsl(199 95% 61% / 0.5)" },
           "50%": { boxShadow: "0 0 40px hsl(199 95% 61% / 0.8), 0 0 60px hsl(199 95% 61% / 0.4)" }
         },
@@ -109,6 +113,7 @@ export default {
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "glow-pulse-dark": "glow-pulse-dark 2s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
       },
     },

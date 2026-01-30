@@ -10,7 +10,7 @@ const Hero = () => {
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20 dark:opacity-30"
           style={{
             backgroundImage: `url(${heroBackground})`,
             backgroundSize: 'cover',
@@ -18,7 +18,7 @@ const Hero = () => {
           }}
         />
         <div className="absolute inset-0 animated-grid opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
       </div>
 
       {/* Content */}

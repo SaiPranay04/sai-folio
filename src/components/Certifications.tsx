@@ -2,31 +2,42 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import certNPTEL from '@/assets/cert-nptel.jpg';
-import certIBMGenAI from '@/assets/GEN AI IBM Langchain_page-0001.jpg';
-import certNGAndrew from '@/assets/NG Andrew_page-0001.jpg';
-import certAmazonML from '@/assets/image.png';
 
 const certifications = [
   {
-    title: 'NPTEL Deep Learning',
-    description: 'Deep Learning Algorithms certification from NPTEL',
-    image: certNPTEL,
+    title: 'Advanced Learning Algorithms',
+    organization: 'DeepLearning.AI (Coursera)',
+    year: '2026',
+    description: 'Advanced machine learning algorithms and neural networks',
+    image: '/deep ng.png',
   },
   {
-    title: 'IBM GenAI - LangChain',
-    description: 'Fundamentals of AI Agents Using RAG and LangChain',
-    image: certIBMGenAI,
+    title: 'Supervised Machine Learning',
+    organization: 'DeepLearning.AI (Coursera)',
+    year: '2025',
+    description: 'Regression and Classification techniques by Andrew Ng',
+    image: '/ml ng.png',
   },
   {
-    title: 'Andrew Ng Machine Learning',
-    description: 'Supervised Machine Learning: Regression and Classification from Stanford',
-    image: certNGAndrew,
+    title: 'AI Agents Using RAG and LangChain',
+    organization: 'IBM (Coursera)',
+    year: '2025',
+    description: 'Fundamentals of AI Agents with RAG and LangChain',
+    image: '/Langchain.png',
   },
   {
-    title: 'Amazon ML Challenge',
-    description: 'Top 2000 in Amazon ML Challenge',
-    image: certAmazonML,
+    title: 'Local LLM Crash Course',
+    organization: 'Udemy - Zoltan C. Toth',
+    year: '2024',
+    description: 'Building AI Chatbots with local LLMs',
+    image: '/LLM.png',
+  },
+  {
+    title: 'IT Automation using Python',
+    organization: 'Google (Coursera)',
+    year: '2024',
+    description: 'Python automation and scripting for IT tasks',
+    image: '/python.png',
   },
 ];
 
@@ -51,7 +62,7 @@ const Certifications = () => {
           <div className="w-20 h-1 bg-primary mx-auto neon-glow" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.title}
@@ -69,9 +80,10 @@ const Certifications = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-primary">
+                  <h3 className="font-orbitron text-base md:text-lg font-semibold mb-1 text-primary">
                     {cert.title}
                   </h3>
+                  <p className="font-exo text-xs text-accent font-medium mb-2">{cert.organization} • {cert.year}</p>
                   <p className="font-exo text-xs md:text-sm text-foreground/70 leading-relaxed">
                     {cert.description}
                   </p>

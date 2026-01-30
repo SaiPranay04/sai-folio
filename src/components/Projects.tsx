@@ -10,26 +10,34 @@ import projectMarine from '@/assets/project-marine.jpg';
 
 const projects = [
   {
-    title: 'EEG Emotion Recognition System',
-    description: 'Predict human emotions using EEG signals and deep learning models with advanced neural network architectures.',
+    title: 'EEG-Based Emotion Classification (Research)',
+    description: 'Comprehensive study of ML, DL, and LLM approaches for classifying valence, arousal, dominance from EEG signals. Achieved 70.5% accuracy with Random Forest. Submitted to Jordan Journal of Electrical Engineering.',
     image: projectEEG,
-    tags: ['Python', 'TensorFlow', 'Mistral LLM', 'Deep Learning'],
+    tags: ['PyTorch', 'CNN', 'BiLSTM', 'Mistral LLM', 'MNE', 't-SNE'],
     github: '#',
     demo: '#',
   },
   {
-    title: "Let's Do IT - AI Task Manager",
-    description: 'An intelligent assistant that plans, tracks, and organizes tasks conversationally using LangGraph and Ollama.',
+    title: 'Keyword-Guided Abstractive Summarization (Research)',
+    description: 'Hybrid keyword extraction pipeline with NER, TF-IDF, and KeyBERT. Fine-tuned BART on 11K samples using keyword-augmented prompts, improving relevance and factual alignment.',
     image: projectTask,
-    tags: ['Next.js', 'LangGraph', 'Ollama', 'AI'],
+    tags: ['BART', 'DeepSeek LLM', 'HuggingFace', 'spaCy', 'ROUGE'],
     github: '#',
     demo: '#',
   },
   {
-    title: 'RT Marine Consulting Website',
-    description: 'Corporate site for a Dubai-based marine firm with multilingual support and enterprise-grade features.',
+    title: 'RT Marine Consulting – Corporate Website',
+    description: 'Modern corporate website for Dubai-based marine firm with admin panel, role-based auth, Turkish localization, SEO optimization, and Google Analytics integration.',
     image: projectMarine,
-    tags: ['Next.js', 'Tailwind', 'Node.js', 'GoDaddy DNS'],
+    tags: ['Next.js', 'NextAuth', 'MongoDB', 'Vercel', 'SEO'],
+    github: '#',
+    demo: '#',
+  },
+  {
+    title: 'Protect+AI: ANPR Module',
+    description: 'CNN-based character recognition model with Canny edge detection achieving 90%+ accuracy. NodeJS backend with MongoDB for real-time plate verification against registered vehicles.',
+    image: projectTask,
+    tags: ['TensorFlow', 'OpenCV', 'Node.js', 'MongoDB', 'CNN'],
     github: '#',
     demo: '#',
   },
@@ -56,7 +64,7 @@ const Projects = () => {
           <div className="w-20 h-1 bg-primary mx-auto neon-glow" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}

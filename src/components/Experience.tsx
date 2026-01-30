@@ -5,22 +5,25 @@ import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Software Dev Intern',
-    company: 'PY Headhunters',
-    period: 'May 2024 – August 2024',
-    description: 'Developed Sustainable footprint manager site',
-  },
-  {
     title: 'AI Intern',
     company: 'NetoAI',
+    location: 'Chennai, India',
     period: 'May 2025 – July 2025',
-    description: 'Built Multi AI agent pipeline for HRMS',
+    description: 'Architected dynamic multi-agent orchestration framework using LangGraph and Mistral-7B. Developed CAA, LOA, and ESA workflows. Built Flask backend integrating HubSpot REST API for 100+ marketing properties.',
   },
   {
     title: 'Freelance Web Developer',
-    company: 'RT Marine',
+    company: 'RT Marine Consulting',
+    location: 'Dubai (Remote)',
     period: 'Sept 2025 – Oct 2025',
-    description: 'Developed and deployed a modern corporate website with functional admin panel',
+    description: 'Developed modern corporate website with secure admin panel, NextAuth authentication, Turkish localization, SEO optimization, and Google Analytics integration.',
+  },
+  {
+    title: 'Software Development Intern',
+    company: 'PY Headhunters',
+    location: 'Bangalore, India',
+    period: 'May 2024 – August 2024',
+    description: 'Engineered full-stack web application for sustainable footprint management. Integrated React.js frontend with Node.js backend and MongoDB. Collaborated in Agile environment with bi-weekly sprints.',
   },
 ];
 
@@ -73,9 +76,10 @@ const Experience = () => {
                   <h3 className="font-orbitron text-xl md:text-2xl font-semibold text-primary mt-2 mb-1">
                     {exp.title}
                   </h3>
-                  <h4 className="font-exo text-base md:text-lg text-foreground/80 mb-3">
+                  <h4 className="font-exo text-base md:text-lg text-foreground/80 mb-1">
                     {exp.company}
                   </h4>
+                  <p className="font-exo text-sm text-foreground/60 mb-3 italic">{exp.location}</p>
                   <p className="font-exo text-sm md:text-base text-foreground/70 leading-relaxed">
                     {exp.description}
                   </p>

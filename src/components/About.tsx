@@ -8,18 +8,18 @@ import avatar from '@/assets/avatar.png';
 const skills = [
   {
     icon: Brain,
-    title: 'AI & ML Research',
-    description: 'DEAP EEG Emotion Recognition project using deep learning algorithms and neural networks.',
+    title: 'AI & NLP Research',
+    description: 'Multi-agent LLM frameworks, EEG-based emotion classification, and keyword-guided abstractive summarization.',
   },
   {
     icon: Code,
     title: 'Full-Stack Development',
-    description: 'Next.js 14 + Node.js + MongoDB expertise for building scalable web applications.',
+    description: 'React, Next.js, Node.js, MongoDB expertise with REST APIs and responsive web applications.',
   },
   {
     icon: Trophy,
-    title: 'Problem Solving',
-    description: 'Regular practice on LeetCode & active participation in national hackathons.',
+    title: 'Deep Learning',
+    description: 'PyTorch, TensorFlow, CNN, LSTM architectures for computer vision and NLP applications.',
   },
 ];
 
@@ -52,11 +52,11 @@ const About = () => {
             className="flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-glow-pulse" />
+              <div className="absolute inset-0 bg-primary/15 dark:bg-primary/20 rounded-full blur-3xl animate-glow-pulse" />
               <img
                 src={avatar}
                 alt="Sai Pranay Bhamidi"
-                className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary/30 neon-glow"
+                className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary/30 neon-glow shadow-xl"
               />
             </div>
           </motion.div>
@@ -67,14 +67,15 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="font-exo text-base md:text-lg text-foreground/80 leading-relaxed">
-              I'm a final-year <span className="text-primary font-semibold">Computer Science & Engineering</span> student 
-              from <span className="text-accent font-semibold">NIT Patna</span>, passionate about AI, Machine Learning, 
-              and Intelligent Web Systems. I love building practical, creative, and futuristic solutions that push the 
-              boundaries of technology.
+              Final-year <span className="text-primary font-semibold">BTech Computer Science</span> student at{' '}
+              <span className="text-accent font-semibold">NIT Patna</span> (GPA: 7.93/10.0) with hands-on research 
+              and development experience in Artificial Intelligence, NLP, and agentic systems. Currently seeking 
+              MS in Artificial Intelligence (Fall 2026).
             </p>
             <p className="font-exo text-base md:text-lg text-foreground/80 leading-relaxed mt-4">
-              With hands-on experience in deep learning research, full-stack development, and AI integration, 
-              I strive to create impactful applications that solve real-world problems.
+              Worked on multi-agent LLM frameworks, EEG-based emotion classification, and keyword-guided abstractive 
+              summarization. Passionate about building intelligent systems that push the boundaries of AI research 
+              and real-world applications.
             </p>
           </motion.div>
         </div>
