@@ -12,13 +12,37 @@ dist
 dist-ssr
 *.local
 
+# Personal certificates folder and documents
+Pranay Certificates/
+Pranay Certificates.zip
+certificates_inventory.txt
+certificates_inventory.csv
+Pranay_CV.pdf
+Certificates Pranay.pptx
+
+# Bun lockfile (if not using bun)
+bun.lockb
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# OS-specific files
+desktop.ini
+.AppleDouble
+.LSOverride

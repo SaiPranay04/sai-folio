@@ -273,4 +273,13 @@ All colors MUST be HSL.
     border-color: hsl(var(--accent) / 0.8);
     box-shadow: 0 0 20px hsl(var(--accent) / 0.6);
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -3,7 +3,6 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Brain, Code, Trophy } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import avatar from '@/assets/avatar.png';
 
 const skills = [
   {
@@ -54,7 +53,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/15 dark:bg-primary/20 rounded-full blur-3xl animate-glow-pulse" />
               <img
-                src={avatar}
+                src="/photo.jpeg"
                 alt="Sai Pranay Bhamidi"
                 className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary/30 neon-glow shadow-xl"
               />
@@ -68,7 +67,7 @@ const About = () => {
           >
             <p className="font-exo text-base md:text-lg text-foreground/80 leading-relaxed">
               Final-year <span className="text-primary font-semibold">BTech Computer Science</span> student at{' '}
-              <span className="text-accent font-semibold">NIT Patna</span> (GPA: 7.93/10.0) with hands-on research 
+              <span className="text-accent font-semibold">NIT Patna</span> (GPA: 8.12/10.0) with hands-on research 
               and development experience in Artificial Intelligence, NLP, and agentic systems. Currently seeking 
               MS in Artificial Intelligence (Fall 2026).
             </p>
