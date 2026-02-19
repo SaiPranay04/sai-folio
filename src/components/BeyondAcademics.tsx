@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Users, Music, Palette, BookOpen, Calendar, Mail } from 'lucide-react';
+import { Users, Music, Palette, BookOpen, Calendar, Mail, Heart } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -68,6 +68,14 @@ const communityInitiatives = [
     period: '2024 - Present',
     description: 'Founded and maintain a weekly Saturday mass mailing initiative reaching community members with curated positive content, motivational insights, and useful information on personalized letterhead. Demonstrates consistent community engagement and leadership.',
     icon: Mail,
+  },
+  {
+    name: 'UMA Educational & Technical Society',
+    role: 'Volunteer',
+    subtitle: 'Disability Support & Inclusion Initiative',
+    period: 'October 2024',
+    description: 'Volunteered at District Disabled Rehabilitation Centre, Kakinada and Special School for Intellectual Disabled and Deafblind. Worked towards comprehension and interacting with Persons with Disabilities, contributing to inclusive community development and social awareness.',
+    icon: Heart,
   },
 ];
 
