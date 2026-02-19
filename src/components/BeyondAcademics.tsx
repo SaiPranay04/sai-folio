@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Users, Music, Palette, BookOpen, Trophy, Calendar } from 'lucide-react';
+import { Users, Music, Palette, BookOpen, Calendar, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -32,7 +32,8 @@ const clubs = [
 const talents = [
   {
     title: 'Music & Performance',
-    skills: ['Singing', 'Piano'],
+    skills: ['Classical Music', 'Piano', 'Singing', 'Ukulele (Learning)', 'Drums (Learning)'],
+    description: 'A music lover practicing classical music since childhood. Accomplished pianist with a deep passion for musical expression, currently expanding skills by learning ukulele and drums.',
     events: [
       { name: 'Taraang - Multi Cultural Fest', role: 'Organizer', date: 'December 2025' },
     ],
@@ -42,6 +43,7 @@ const talents = [
   {
     title: 'Graphic Design',
     skills: ['Visual Design', 'Poster Creation'],
+    description: '',
     events: [
       { name: 'Treasure Hunt Event', role: 'Designer', date: 'October 2023', organization: 'Desco Design Club' },
     ],
@@ -49,18 +51,22 @@ const talents = [
     color: 'text-primary',
   },
   {
-    title: 'Sports & Recreation',
-    skills: ['Badminton'],
-    events: [],
-    icon: Trophy,
-    color: 'text-accent',
-  },
-  {
     title: 'Reading & Learning',
-    skills: ['Book Reading'],
+    skills: ['Research Papers', 'Thrilling Novels', 'AI & Machine Learning', 'Sci-Fi Literature'],
+    description: 'Avid reader with diverse interests ranging from academic research papers to thrilling novels. Particularly passionate about AI, machine learning literature, and science fiction that explores the future of technology and humanity.',
     events: [],
     icon: BookOpen,
     color: 'text-primary',
+  },
+];
+
+const communityInitiatives = [
+  {
+    role: 'Founder & Editor',
+    organization: 'Gist of Life - Weekly Community Newsletter',
+    period: '2024 - Present',
+    description: 'Founded and maintain a weekly Saturday mass mailing initiative reaching community members with curated positive content, motivational insights, and useful information on personalized letterhead. Demonstrates consistent community engagement and leadership.',
+    icon: Mail,
   },
 ];
 
@@ -86,7 +92,7 @@ const BeyondAcademics = () => {
           <div className="w-20 h-1 bg-primary mx-auto neon-glow" />
         </motion.div>
 
-        {/* Clubs Subsection */}
+        {/* Community Initiatives Subsection */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -94,20 +100,20 @@ const BeyondAcademics = () => {
           className="mb-20"
         >
           <div className="flex items-center gap-3 mb-8">
-            <Users className="w-6 h-6 text-primary" />
+            <Mail className="w-6 h-6 text-primary" />
             <h3 className="font-orbitron text-2xl md:text-3xl font-semibold text-primary">
-              Clubs & Leadership
+              Community Initiatives
             </h3>
           </div>
 
           <div className="max-w-5xl mx-auto space-y-8">
-            {clubs.map((club, index) => {
-              const Icon = club.icon;
+            {communityInitiatives.map((initiative, index) => {
+              const Icon = initiative.icon;
               const isEven = index % 2 === 0;
               
               return (
                 <motion.div
-                  key={club.role}
+                  key={initiative.role}
                   initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
@@ -126,21 +132,82 @@ const BeyondAcademics = () => {
                       <CardContent className="p-0">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
                           <h4 className="font-orbitron text-lg md:text-xl font-semibold text-primary">
-                            {club.role}
+                            {initiative.role}
                           </h4>
                           <Badge variant="outline" className="font-exo text-xs border-accent/30 text-accent w-fit">
-                            {club.period}
+                            {initiative.period}
                           </Badge>
                         </div>
                         <p className="font-exo text-sm text-foreground/70 mb-2 italic">
-                          {club.organization}
+                          {initiative.organization}
                         </p>
                         <p className="font-exo text-sm md:text-base text-foreground/80 leading-relaxed">
-                          {club.description}
+                          {initiative.description}
                         </p>
                       </CardContent>
                     </Card>
                   </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Clubs Subsection */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mb-20"
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <Users className="w-6 h-6 text-primary" />
+            <h3 className="font-orbitron text-2xl md:text-3xl font-semibold text-primary">
+              Clubs & Leadership
+            </h3>
+          </div>
+
+          <div className="max-w-5xl mx-auto space-y-6">
+            {clubs.map((club, index) => {
+              const Icon = club.icon;
+              
+              return (
+                <motion.div
+                  key={club.role}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
+                >
+                  <Card className="glass-card p-6 hover:neon-glow transition-all duration-300">
+                    <CardContent className="p-0">
+                      <div className="flex items-start gap-4">
+                        {/* Icon */}
+                        <div className="flex-shrink-0">
+                          <div className="w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+                            <Icon className="w-8 h-8 text-primary" />
+                          </div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="flex-1">
+                          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+                            <h4 className="font-orbitron text-lg md:text-xl font-semibold text-primary">
+                              {club.role}
+                            </h4>
+                            <Badge variant="outline" className="font-exo text-xs border-accent/30 text-accent w-fit">
+                              {club.period}
+                            </Badge>
+                          </div>
+                          <p className="font-exo text-sm text-foreground/70 mb-2 italic">
+                            {club.organization}
+                          </p>
+                          <p className="font-exo text-sm md:text-base text-foreground/80 leading-relaxed">
+                            {club.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -151,7 +218,7 @@ const BeyondAcademics = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
         >
           <div className="flex items-center gap-3 mb-8">
             <Music className="w-6 h-6 text-accent" />
@@ -160,88 +227,96 @@ const BeyondAcademics = () => {
             </h3>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-6">
             {talents.map((talent, index) => {
               const Icon = talent.icon;
-              const isEven = index % 2 === 0;
               
               return (
                 <motion.div
                   key={talent.title}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
-                  className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 1.2 + index * 0.15 }}
                 >
-                  {/* Icon/Visual Element */}
-                  <div className={`flex-shrink-0 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                    <div className={`w-24 h-24 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center border-2 border-accent/30 neon-glow-accent`}>
-                      <Icon className={`w-12 h-12 ${talent.color}`} />
-                    </div>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className={`flex-1 ${isEven ? 'md:order-2 md:text-left' : 'md:order-1 md:text-right'}`}>
-                    <Card className="glass-card p-6 hover:neon-glow-accent transition-all duration-300">
-                      <CardContent className="p-0">
-                        <h4 className={`font-orbitron text-lg md:text-xl font-semibold mb-4 ${talent.color}`}>
-                          {talent.title}
-                        </h4>
-                        
-                        {/* Skills */}
-                        <div className="mb-4">
-                          <div className="flex flex-wrap gap-2 mb-2">
-                            {talent.skills.map((skill) => (
-                              <Badge 
-                                key={skill}
-                                variant="outline" 
-                                className={`font-exo text-xs border-primary/30 text-primary/80 hover:bg-primary/10 ${isEven ? '' : 'md:ml-auto md:mr-0'}`}
-                              >
-                                {skill}
-                              </Badge>
-                            ))}
+                  <Card className="glass-card p-6 hover:neon-glow-accent transition-all duration-300">
+                    <CardContent className="p-0">
+                      <div className="flex items-start gap-4">
+                        {/* Icon */}
+                        <div className="flex-shrink-0">
+                          <div className={`w-16 h-16 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center border-2 border-accent/30`}>
+                            <Icon className={`w-8 h-8 ${talent.color}`} />
                           </div>
                         </div>
-
-                        {/* Events */}
-                        {talent.events.length > 0 && (
-                          <div className="space-y-2">
-                            <div className="flex items-center gap-2 mb-2">
-                              <Calendar className="w-4 h-4 text-accent" />
-                              <span className="font-exo text-xs font-semibold text-accent">Events</span>
+                        
+                        {/* Content */}
+                        <div className="flex-1">
+                          <h4 className={`font-orbitron text-lg md:text-xl font-semibold mb-3 ${talent.color}`}>
+                            {talent.title}
+                          </h4>
+                          
+                          {/* Skills */}
+                          <div className="mb-4">
+                            <div className="flex flex-wrap gap-2">
+                              {talent.skills.map((skill) => (
+                                <Badge 
+                                  key={skill}
+                                  variant="outline" 
+                                  className="font-exo text-xs border-primary/30 text-primary/80 hover:bg-primary/10"
+                                >
+                                  {skill}
+                                </Badge>
+                              ))}
                             </div>
-                            {talent.events.map((event, eventIndex) => (
-                              <div 
-                                key={eventIndex}
-                                className={`font-exo text-sm text-foreground/70 ${isEven ? 'text-left' : 'md:text-right'}`}
-                              >
-                                <span className="font-semibold text-foreground/90">{event.name}</span>
-                                {' • '}
-                                <span className="text-accent">{event.role}</span>
-                                {event.organization && (
-                                  <>
-                                    {' • '}
-                                    <span className="text-foreground/60 italic">{event.organization}</span>
-                                  </>
-                                )}
-                                {event.date && (
-                                  <>
-                                    {' • '}
-                                    <span className="text-foreground/60">{event.date}</span>
-                                  </>
-                                )}
-                              </div>
-                            ))}
                           </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
+
+                          {/* Description */}
+                          {talent.description && (
+                            <p className="font-exo text-sm md:text-base text-foreground/80 leading-relaxed mb-4">
+                              {talent.description}
+                            </p>
+                          )}
+
+                          {/* Events */}
+                          {talent.events.length > 0 && (
+                            <div className="space-y-2">
+                              <div className="flex items-center gap-2 mb-2">
+                                <Calendar className="w-4 h-4 text-accent" />
+                                <span className="font-exo text-xs font-semibold text-accent">Events</span>
+                              </div>
+                              {talent.events.map((event, eventIndex) => (
+                                <div 
+                                  key={eventIndex}
+                                  className="font-exo text-sm text-foreground/70"
+                                >
+                                  <span className="font-semibold text-foreground/90">{event.name}</span>
+                                  {' • '}
+                                  <span className="text-accent">{event.role}</span>
+                                  {event.organization && (
+                                    <>
+                                      {' • '}
+                                      <span className="text-foreground/60 italic">{event.organization}</span>
+                                    </>
+                                  )}
+                                  {event.date && (
+                                    <>
+                                      {' • '}
+                                      <span className="text-foreground/60">{event.date}</span>
+                                    </>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
           </div>
         </motion.div>
+
       </div>
     </section>
   );
