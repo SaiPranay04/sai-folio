@@ -62,8 +62,9 @@ const talents = [
 
 const communityInitiatives = [
   {
+    name: 'Gist of Life',
     role: 'Founder & Editor',
-    organization: 'Gist of Life - Weekly Community Newsletter',
+    subtitle: 'Weekly Community Newsletter',
     period: '2024 - Present',
     description: 'Founded and maintain a weekly Saturday mass mailing initiative reaching community members with curated positive content, motivational insights, and useful information on personalized letterhead. Demonstrates consistent community engagement and leadership.',
     icon: Mail,
@@ -106,47 +107,49 @@ const BeyondAcademics = () => {
             </h3>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-6">
             {communityInitiatives.map((initiative, index) => {
               const Icon = initiative.icon;
-              const isEven = index % 2 === 0;
               
               return (
                 <motion.div
-                  key={initiative.role}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
-                  className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6`}
+                  key={initiative.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }}
                 >
-                  {/* Icon/Visual Element */}
-                  <div className={`flex-shrink-0 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                    <div className="w-24 h-24 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center border-2 border-primary/30 neon-glow">
-                      <Icon className="w-12 h-12 text-primary" />
-                    </div>
-                  </div>
-
-                  {/* Content Card */}
-                  <div className={`flex-1 ${isEven ? 'md:order-2 md:text-left' : 'md:order-1 md:text-right'}`}>
-                    <Card className="glass-card p-6 hover:neon-glow transition-all duration-300">
-                      <CardContent className="p-0">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                          <h4 className="font-orbitron text-lg md:text-xl font-semibold text-primary">
-                            {initiative.role}
-                          </h4>
-                          <Badge variant="outline" className="font-exo text-xs border-accent/30 text-accent w-fit">
-                            {initiative.period}
-                          </Badge>
+                  <Card className="glass-card p-6 hover:neon-glow transition-all duration-300">
+                    <CardContent className="p-0">
+                      <div className="flex items-start gap-4">
+                        {/* Icon */}
+                        <div className="flex-shrink-0">
+                          <div className="w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+                            <Icon className="w-8 h-8 text-primary" />
+                          </div>
                         </div>
-                        <p className="font-exo text-sm text-foreground/70 mb-2 italic">
-                          {initiative.organization}
-                        </p>
-                        <p className="font-exo text-sm md:text-base text-foreground/80 leading-relaxed">
-                          {initiative.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
+                        
+                        {/* Content */}
+                        <div className="flex-1">
+                          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+                            <div>
+                              <h4 className="font-orbitron text-lg md:text-xl font-semibold text-primary mb-1">
+                                {initiative.name}
+                              </h4>
+                              <p className="font-exo text-sm text-foreground/70 italic">
+                                {initiative.role} • {initiative.subtitle}
+                              </p>
+                            </div>
+                            <Badge variant="outline" className="font-exo text-xs border-accent/30 text-accent w-fit">
+                              {initiative.period}
+                            </Badge>
+                          </div>
+                          <p className="font-exo text-sm md:text-base text-foreground/80 leading-relaxed mt-3">
+                            {initiative.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
